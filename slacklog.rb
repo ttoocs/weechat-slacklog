@@ -134,6 +134,8 @@ class SlackAPI
     end
   rescue JSON::ParserError
     raise "API Error: unable to parse HTTP response"
+	rescue
+		retry
   end
 
   def parameterize(query)
